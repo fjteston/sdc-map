@@ -11,10 +11,11 @@
         width: 100%;
       }
     </style>
-    <!-- Include the Google Maps JavaScript API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPJhb-qctLMiCRYyw2apd0YnCPS2TcjdI"></script>
     <!-- Include the Google Maps Marker Library -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPJhb-qctLMiCRYyw2apd0YnCPS2TcjdI&libraries=marker"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPJhb-qctLMiCRYyw2apd0YnCPS2TcjdI&callback=initMap&v=weekly&libraries=marker"
+      defer
+    ></script>
     <link rel="stylesheet" href="styles.css" />
     <script>
       function initMap() {
@@ -24,6 +25,7 @@
         var map = new google.maps.Map(document.getElementById("map"), {
           zoom: 12,
           center: centerLocation,
+          mapId: "SDC_MAP_ID",
         });
 
         // Array of marker locations
@@ -114,9 +116,10 @@
 
         // Loop through the array and place markers
         locations.forEach(function (location) {
-          var marker = new google.maps.Marker({
+          var marker = new google.maps.marker.AdvancedMarkerElement({
             position: { lat: location.lat, lng: location.lng },
             map: map,
+            title: location.title,
           });
 
           // Event listeners for showing/hiding tooltip
