@@ -1,1 +1,49 @@
-Hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Maps with Markers</title>
+  <style>
+    /* Set the size of the map div */
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+  <!-- Include the Google Maps JavaScript API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+  <script>
+    function initMap() {
+      // Create a map centered at a location (Latitude, Longitude)
+      var centerLocation = { lat: 37.7749, lng: -122.4194 }; // San Francisco example
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: centerLocation
+      });
+
+      // Array of marker locations
+      var locations = [
+        { lat: 37.7749, lng: -122.4194 }, // San Francisco
+        { lat: 37.8044, lng: -122.2712 }, // Oakland
+        { lat: 37.6879, lng: -122.4702 }  // Daly City
+      ];
+
+      // Loop through the array and place markers
+      for (var i = 0; i < locations.length; i++) {
+        new google.maps.Marker({
+          position: locations[i],
+          map: map
+        });
+      }
+    }
+  </script>
+</head>
+<body onload="initMap()">
+
+  <h1>Google Maps with Markers</h1>
+  <div id="map"></div>
+
+</body>
+</html>
