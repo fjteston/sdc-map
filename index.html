@@ -107,27 +107,11 @@
           { lat: 14.215883, lng: 121.032636, title: "Twiddletooth" },
         ];
 
-        // Create a tooltip element
-        var tooltip = document.createElement("div");
-        tooltip.className = "tooltip";
-        document.body.appendChild(tooltip);
         // Loop through the array and place markers
         locations.forEach(function (location) {
           var marker = new google.maps.Marker({
             position: { lat: location.lat, lng: location.lng },
             map: map,
-          });
-
-          // Event listeners for showing/hiding tooltip
-          marker.addListener("mouseover", function (event) {
-            tooltip.innerHTML = location.title;
-            tooltip.style.display = "block";
-            tooltip.style.left = `${event.clientX}px`;
-            tooltip.style.top = `${event.clientY + 10}px`;
-          });
-
-          marker.addListener("mouseout", function () {
-            tooltip.style.display = "none";
           });
         });
       }
