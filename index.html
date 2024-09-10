@@ -107,6 +107,10 @@
           { lat: 14.215883, lng: 121.032636, title: "Twiddletooth" },
         ];
 
+            // Create a tooltip element
+            var tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            document.body.appendChild(tooltip);
         // Loop through the array and place markers
         locations.forEach(function (location) {
           new google.maps.Marker({
