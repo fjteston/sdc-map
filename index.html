@@ -7,7 +7,7 @@
     <style>
       /* Set the size of the map div */
       #map {
-        height: 600px;
+        height: 80vh;
         width: 100%;
       }
     </style>
@@ -22,7 +22,6 @@
         var map = new google.maps.Map(document.getElementById("map"), {
           zoom: 7,
           center: centerLocation,
-          styles: darkTheme,
         });
 
         // Array of marker locations
@@ -181,6 +180,7 @@
           new google.maps.Marker({
             position: locations[i],
             map: map,
+            title: "Test",
           });
         }
       }
