@@ -6,6 +6,7 @@ body {
 }
 
 .logo-container {
+  text-align: center;
   width: 100%;
 }
 .sdc-logo {
