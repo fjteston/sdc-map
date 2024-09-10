@@ -10,10 +10,11 @@
         height: 80vh;
         width: 100%;
       }
-      
     </style>
     <!-- Include the Google Maps JavaScript API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPJhb-qctLMiCRYyw2apd0YnCPS2TcjdI"></script>
+    <!-- Include the Google Maps Marker Library -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPJhb-qctLMiCRYyw2apd0YnCPS2TcjdI&libraries=marker"></script>
     <link rel="stylesheet" href="styles.css" />
     <script>
       function initMap() {
@@ -108,10 +109,10 @@
 
         // Loop through the array and place markers
         locations.forEach(function (location) {
-          new google.maps.AdvancedMarkerElement({
-            position: new google.maps.LatLng(location.lat, location.lng),
+          new google.maps.Marker({
+            position: { lat: location.lat, lng: location.lng },
             map: map,
-            content: `<div>${location.title}</div>`, // Custom HTML content
+            label: location.title,
           });
         });
       }
