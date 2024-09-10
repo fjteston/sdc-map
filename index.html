@@ -17,7 +17,7 @@
     <script>
       function initMap() {
         // Create a map centered at a location (Latitude, Longitude)
-        var centerLocation = { lat: 14.221857, lng: 121.003875 }; // San Francisco example
+        var centerLocation = { lat: 14.221857, lng: 121.003875 }; // Silang
 
         var map = new google.maps.Map(document.getElementById("map"), {
           zoom: 7,
@@ -180,7 +180,7 @@
           new google.maps.Marker({
             position: locations[i],
             map: map,
-            title: "Test",
+            title: locations[i].title,
           });
         }
       }
