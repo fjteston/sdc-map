@@ -7,7 +7,7 @@
     <style>
       /* Set the size of the map div */
       #map {
-        height: 400px;
+        height: 600px;
         width: 100%;
       }
     </style>
@@ -20,7 +20,7 @@
         var centerLocation = { lat: 14.221857, lng: 121.003875 }; // San Francisco example
 
         var map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 10,
+          zoom: 14,
           center: centerLocation,
           styles: darkTheme,
         });
@@ -38,11 +38,19 @@
             lng: 120.955777,
             title: "Dela Pena Sandoval (Ortho Dental Clinic)",
           },
+          {
+            lat: 14.133614,
+            lng: 120.956439,
+            title: "ToothPlace Dental Center",
+          },
+          { lat: 14.1377, lng: 120.955391, title: "TRI-M DENTAL CLINIC" },
           { lat: 14.223208, lng: 120.974383, title: "Dental Town" },
           { lat: 14.250721, lng: 121.052143, title: "CM Smile Dental Center" },
           { lat: 14.250847, lng: 121.0023, title: "La Dental Center" },
           { lat: 14.222011, lng: 120.97349, title: "Beam " },
           { lat: 14.223295, lng: 120.971288, title: "De Leon Dental Clinic" },
+          { lat: 14.226667, lng: 120.972778, title: "Evelyn Dela Rea-Marin" },
+          { lat: 14.204722, lng: 121.015278, title: "Leonardo-Molina" },
           { lat: 14.222636, lng: 120.973107, title: "Bayot_Montoya" },
           { lat: 14.221328, lng: 120.974289, title: "Fadrigalan" },
           { lat: 14.208845, lng: 120.95298, title: "Galvo" },
@@ -63,14 +71,43 @@
             title: "District II Dental Clinic",
           },
           { lat: 14.224491, lng: 120.973552, title: "Orana Dental" },
+          { lat: 14.221405, lng: 121.03709, title: "Marticio-Isaac Dental" },
           {
             lat: 14.225126197478703,
             lng: 120.97422686633477,
             title: "Buen Dental Clinic",
           },
           { lat: 14.220886, lng: 120.973348, title: "Baysantos Dental Clinic" },
+          {
+            lat: 14.22143887403887,
+            lng: 121.03706094490195,
+            title: "Magnifident",
+          },
           { lat: 14.218257, lng: 120.972763, title: "Perdito Dental Clinic" },
+          { lat: 14.223889, lng: 120.973056, title: "Lucio Dental Clinic" },
+          { lat: 14.204722, lng: 121.016667, title: "Lani ABA" },
+          { lat: 14.178611, lng: 121.006389, title: "Cornelio ABA" },
           { lat: 14.217538, lng: 120.972155, title: "Balalta" },
+          {
+            lat: 14.208974883843,
+            lng: 120.95290217307071,
+            title: "Vilma Loyola",
+          },
+          {
+            lat: 14.208928418786567,
+            lng: 121.02520531939389,
+            title: "cam dental",
+          },
+          {
+            lat: 14.180749910987847,
+            lng: 121.00732280218062,
+            title: "artooth",
+          },
+          {
+            lat: 14.216096379201263,
+            lng: 121.03264907353525,
+            title: "Twiddletooth",
+          },
         ];
 
         //dark theme
