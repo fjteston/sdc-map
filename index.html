@@ -17,7 +17,7 @@
     <script>
       function initMap() {
         // Create a map centered at a location (Latitude, Longitude)
-        var centerLocation = { lat: 37.7749, lng: -122.4194 }; // San Francisco example
+        var centerLocation = { lat: 14.221857,, lng: 121.003875 }; // San Francisco example
 
         var map = new google.maps.Map(document.getElementById("map"), {
           zoom: 10,
@@ -27,9 +27,34 @@
 
         // Array of marker locations
         var locations = [
-          { lat: 37.7749, lng: -122.4194 }, // San Francisco
-          { lat: 37.8044, lng: -122.2712 }, // Oakland
-          { lat: 37.6879, lng: -122.4702 }, // Daly City
+        { lat: 14.218644, lng: 120.973056, title: 'Pastrana Dental Clinic' },
+        { lat: 14.248632, lng: 120.976071, title: 'Dominguez Dental Aesthetics' },
+        { lat: 14.136124, lng: 120.955777, title: 'Dela Pena Sandoval (Ortho Dental Clinic)' },
+        { lat: 14.223208, lng: 120.974383, title: 'Dental Town' },
+        { lat: 14.250721, lng: 121.052143, title: 'CM Smile Dental Center' },
+        { lat: 14.250847, lng: 121.002300, title: 'La Dental Center' },
+        { lat: 14.222011, lng: 120.973490, title: 'Beam ' },
+        { lat: 14.223295, lng: 120.971288, title: 'De Leon Dental Clinic' },
+        { lat: 14.222636, lng: 120.973107, title: 'Bayot_Montoya' },
+        { lat: 14.221328, lng: 120.974289, title: 'Fadrigalan' },
+        { lat: 14.208845, lng: 120.952980, title: 'Galvo' },
+        { lat: 14.179669, lng: 121.007638, title: 'Dentista K.O.' },
+        { lat: 14.231087, lng: 120.975877, title: 'Dental Corber' },
+        { lat: 14.157673, lng: 120.957970, title: 'All Smiles' },
+        { lat: 14.200946, lng: 121.022874, title: 'Tagle' },
+        { lat: 14.217505, lng: 121.034198, title: 'Baracinas' },
+        { lat: 14.211421, lng: 121.027642, title: 'Smile Ready' },
+        { lat: 14.246548, lng: 120.975783, title: 'highpoint' },
+        { lat: 14.220974, lng: 120.971806, title: 'District Denbtal clinic' },
+        { lat: 14.207458, lng: 121.020881, title: 'Tooth Delight' },
+        { lat: 14.221156, lng: 120.973448, title: 'Dent Care' },
+        { lat: 14.250399, lng: 121.052244, title: 'Carper Dental Studio' },
+        { lat: 14.162158, lng: 120.958406, title: 'District II Dental Clinic' },
+        { lat: 14.224491, lng: 120.973552, title: 'Orana Dental' },
+        { lat: 14.225126197478703, lng: 120.97422686633477, title: 'Buen Dental Clinic' },
+        { lat: 14.220886, lng: 120.973348, title: 'Baysantos Dental Clinic' },
+        { lat: 14.218257, lng: 120.972763, title: 'Perdito Dental Clinic' },
+        { lat: 14.217538, lng: 120.972155, title: 'Balalta' },
         ];
 
         //dark theme
