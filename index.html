@@ -107,10 +107,10 @@
 
         // Loop through the array and place markers
         locations.forEach(function (location) {
-          new google.maps.Marker({
+          new google.maps.AdvancedMarkerElement({
             position: { lat: location.lat, lng: location.lng },
             map: map,
-            label: location.title,
+            title: location.title,
           });
         });
       }
