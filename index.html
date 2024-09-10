@@ -123,13 +123,26 @@
             title: location.title,
           });
 
-          // Event listeners for showing/hiding tooltip
-          marker.addListener("mouseclick", function (event) {
+          // Event listeners for showing tooltip
+          marker.addListener("click", function (event) {
+            if (lastClickedMarker) {
+              lastClickedMarker.setMap(map);
+            }
             tooltip.innerHTML = location.title;
             tooltip.style.display = "block";
             tooltip.style.left = `${event.clientX}px`;
             tooltip.style.top = `${event.clientY + 10}px`;
+            lastClickedMarker = marker;
+            marker.setMap(null);
           });
+        });
+        // Hide the tooltip when clicking elsewhere on the map
+        map.addListener("click", function () {
+          tooltip.style.display = "none";
+          if (lastClickedMarker) {
+            lastClickedMarker.setMap(map);
+            lastClickedMarker = null;
+          }
         });
       }
     </script>
