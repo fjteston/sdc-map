@@ -113,7 +113,7 @@
         document.body.appendChild(tooltip);
         // Loop through the array and place markers
         locations.forEach(function (location) {
-          new google.maps.Marker({
+          var marker = new google.maps.Marker({
             position: { lat: location.lat, lng: location.lng },
             map: map,
           });
