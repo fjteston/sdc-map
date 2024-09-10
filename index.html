@@ -108,9 +108,9 @@
         // Loop through the array and place markers
         locations.forEach(function (location) {
           new google.maps.AdvancedMarkerElement({
-            position: { lat: location.lat, lng: location.lng },
+            position: new google.maps.LatLng(location.lat, location.lng),
             map: map,
-            title: location.title,
+            content: `<div>${location.title}</div>`, // Custom HTML content
           });
         });
       }
