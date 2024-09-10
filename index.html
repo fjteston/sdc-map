@@ -106,13 +106,13 @@
         ];
 
         // Loop through the array and place markers
-        for (var i = 0; i < locations.length; i++) {
+        locations.forEach(function (location) {
           new google.maps.Marker({
-            position: locations[i],
+            position: { lat: location.lat, lng: location.lng },
             map: map,
-            title: locations[i].title,
+            title: location.title,
           });
-        }
+        });
       }
     </script>
   </head>
