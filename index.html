@@ -116,34 +116,36 @@
         document.body.appendChild(tooltip);
         var lastClickedMarker = null;
 
+        // Define custom marker icons
+        var defaultIcon =
+          "http://maps.google.com/mapfiles/ms/icons/red-dot.png"; // Default red icon
+        var clickedIcon =
+          "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"; // Clicked blue icon
         // Loop through the array and place markers
         locations.forEach(function (location) {
           var marker = new google.maps.marker.AdvancedMarkerElement({
             position: { lat: location.lat, lng: location.lng },
             map: map,
             title: location.title,
+            icon: defaultIcon,
           });
 
           // Event listeners for showing tooltip
           marker.addListener("click", function (event) {
             if (lastClickedMarker) {
-              lastClickedMarker.setMap(map);
+              lastClickedMarker.setIcon(defaultIcon); // Revert previous marker to default icon
             }
+            marker.setIcon(clickedIcon); // Change the clicked marker's icon
             tooltip.innerHTML = location.title;
             tooltip.style.display = "block";
             tooltip.style.left = `${event.clientX}px`;
             tooltip.style.top = `${event.clientY + 10}px`;
-            lastClickedMarker = marker;
-            marker.setMap(null);
+            lastClickedMarker = marker; // Update last clicked marker
           });
         });
         // Hide the tooltip when clicking elsewhere on the map
         map.addListener("click", function () {
           tooltip.style.display = "none";
-          if (lastClickedMarker) {
-            lastClickedMarker.setMap(map);
-            lastClickedMarker = null;
-          }
         });
       }
     </script>
