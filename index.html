@@ -124,15 +124,11 @@
           });
 
           // Event listeners for showing/hiding tooltip
-          marker.addListener("mouseover", function (event) {
+          marker.addListener("mouseclick", function (event) {
             tooltip.innerHTML = location.title;
             tooltip.style.display = "block";
             tooltip.style.left = `${event.clientX}px`;
             tooltip.style.top = `${event.clientY + 10}px`;
-          });
-
-          marker.addListener("mouseout", function () {
-            tooltip.style.display = "none";
           });
         });
       }
