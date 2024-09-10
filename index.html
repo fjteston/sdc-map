@@ -115,6 +115,8 @@
         tooltip.className = "tooltip";
         document.body.appendChild(tooltip);
 
+        var lastClickedMarker = null;
+
         // Loop through the array and place markers
         locations.forEach(function (location) {
           var marker = new google.maps.marker.AdvancedMarkerElement({
